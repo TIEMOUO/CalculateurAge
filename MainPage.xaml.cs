@@ -3,15 +3,17 @@ using CalculateurAge.Views;
 
 namespace CalculateurAge;
 
-public partial class MainPage : ContentPage
-{
-    public MainPage()
+    public partial class MainPage : ContentPage
     {
-        InitializeComponent();
-    }
+        int count = 0;
+
+        public MainPage()
+        {
+            InitializeComponent();
+        }
 
     private async void OnCalculerClicked(object? sender, EventArgs e)
-    {
+        {
         if (string.IsNullOrWhiteSpace(entryNom.Text))
         {
             await DisplayAlert("Erreur", "Entrez un nom", "OK");
